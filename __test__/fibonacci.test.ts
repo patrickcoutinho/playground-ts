@@ -1,4 +1,4 @@
-import { createFibonacci } from "../src/array";
+import { createFibonacci } from "../src/fibonacci";
 
 describe("Array Playground Tests", () => {
   test('should create 1 elements of Fibonacci sequence"', () => {

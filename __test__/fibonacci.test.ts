@@ -1,27 +1,26 @@
-import { createFibonacci } from "../src/fibonacci";
+import { createFibonacci } from '../src/fibonacci';
 
-describe("Array Playground Tests", () => {
-  test('should create 1 elements of Fibonacci sequence"', () => {
-    expect(createFibonacci(1)).toEqual([0]);
-  });
+const fibonacci: number[] = [
+  0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584,
+  4181, 6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811,
+];
 
-  test('should create 2 elements of Fibonacci sequence"', () => {
-    expect(createFibonacci(2)).toEqual([0, 1]);
-  });
+const fibonacciSlices = [];
+for (let num in fibonacci) {
+  fibonacciSlices[num] = fibonacci.slice(0, num as unknown as number);
+}
 
-  test('should create 3 elements of Fibonacci sequence"', () => {
-    expect(createFibonacci(3)).toEqual([0, 1, 1]);
-  });
+const testCase = [
+  ...fibonacciSlices.map((slice, index) => {
+    return { items: index, expected: slice };
+  }),
+];
 
-  test('should create 4 elements of Fibonacci sequence"', () => {
-    expect(createFibonacci(4)).toEqual([0, 1, 1, 2]);
-  });
-
-  test('should create 5 elements of Fibonacci sequence"', () => {
-    expect(createFibonacci(5)).toEqual([0, 1, 1, 2, 3]);
-  });
-
-  test('should create 6 elements of Fibonacci sequence"', () => {
-    expect(createFibonacci(6)).toEqual([0, 1, 1, 2, 3, 5]);
-  });
+describe('Fibonacci Sequence Playground Tests', () => {
+  test.each(testCase)(
+    'should create $items elements of Fibonacci sequence',
+    ({ items, expected }) => {
+      expect(createFibonacci(items)).toEqual(expected);
+    }
+  );
 });

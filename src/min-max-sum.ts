@@ -6,7 +6,9 @@ export const minMaxSum = (arr: number[]): number[] => {
     possibleSums[index] = totalSum - item;
   });
 
-  possibleSums.sort();
+  possibleSums.sort((a, b) => {
+    return a - b;
+  });
 
   return [possibleSums[0], possibleSums[possibleSums.length - 1]];
 };

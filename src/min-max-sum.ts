@@ -1,4 +1,9 @@
-export const minMaxSum = (arr: number[]): number[] => {
+export type MinMaxSumReturn = {
+  min: number;
+  max: number;
+};
+
+export const minMaxSum = (arr: number[]): MinMaxSumReturn => {
   const totalSum = arr.reduce((item, sum) => item + sum);
   const possibleSums: number[] = [];
 
@@ -10,5 +15,5 @@ export const minMaxSum = (arr: number[]): number[] => {
     return a - b;
   });
 
-  return [possibleSums[0], possibleSums[possibleSums.length - 1]];
+  return { min: possibleSums[0], max: possibleSums[possibleSums.length - 1] };
 };

@@ -11,4 +11,8 @@ export default class Stack {
     this.items[this.count] = value;
     this.count++;
   }
+
+  public size() {
+    return this.count;
+  }
 }

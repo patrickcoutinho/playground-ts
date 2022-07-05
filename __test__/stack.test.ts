@@ -17,8 +17,9 @@ describe('Stack Tests Playground', () => {
 
     expect(stack.size()).toBe(2);
 
-    stack.pop();
+    const item = stack.pop();
 
+    expect(item).toEqual(99);
     expect(stack.size()).toBe(1);
   });
 

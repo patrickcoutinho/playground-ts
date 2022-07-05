@@ -13,8 +13,12 @@ export default class Stack {
   }
 
   public pop() {
-    delete this.items[this.count];
+    const item = this.items[this.count - 1] || undefined;
+
+    delete this.items[this.count - 1];
     this.count--;
+
+    return item;
   }
 
   public size() {

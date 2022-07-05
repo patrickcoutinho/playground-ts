@@ -12,6 +12,11 @@ export default class Stack {
     this.count++;
   }
 
+  public pop() {
+    delete this.items[this.count];
+    this.count--;
+  }
+
   public size() {
     return this.count;
   }

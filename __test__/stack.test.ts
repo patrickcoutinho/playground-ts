@@ -8,4 +8,13 @@ describe('Stack Tests Playground', () => {
 
     expect(stack.size()).toBe(1);
   });
+
+  test('should return the stack size', () => {
+    const stack = new Stack();
+
+    stack.push(1);
+    stack.push(2);
+
+    expect(stack.size()).toBe(2);
+  });
 });

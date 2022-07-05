@@ -9,6 +9,19 @@ describe('Stack Tests Playground', () => {
     expect(stack.size()).toBe(1);
   });
 
+  test('should remove an element from stack', () => {
+    const stack = new Stack();
+
+    stack.push(21);
+    stack.push(99);
+
+    expect(stack.size()).toBe(2);
+
+    stack.pop();
+
+    expect(stack.size()).toBe(1);
+  });
+
   test('should return the stack size', () => {
     const stack = new Stack();
 

@@ -51,4 +51,15 @@ describe('Stack Tests Playground', () => {
 
     expect(stack.isEmpty()).toBeFalsy();
   });
+
+  test('should return the value of the item on top of the stack', () => {
+    const stack = new Stack();
+
+    stack.push(1);
+    stack.push(2);
+    stack.push(99);
+
+    expect(stack.peek()).toBe(99);
+    expect(stack.size()).toBe(3);
+  });
 });

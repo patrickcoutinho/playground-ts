@@ -24,4 +24,8 @@ export default class Stack {
   public size() {
     return this.count;
   }
+
+  public isEmpty() {
+    return this.count === 0;
+  }
 }

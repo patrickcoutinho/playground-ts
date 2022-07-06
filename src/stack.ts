@@ -23,6 +23,10 @@ export default class Stack {
     return item;
   }
 
+  public peek() {
+    return this.items[this.count - 1] || undefined;
+  }
+
   public size() {
     return this.count;
   }

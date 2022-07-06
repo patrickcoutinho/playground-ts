@@ -31,4 +31,15 @@ describe('Stack Tests Playground', () => {
 
     expect(stack.size()).toBe(2);
   });
+
+  test('should return if stack is empty', () => {
+    const stack = new Stack();
+
+    expect(stack.isEmpty()).toBeTruthy();
+
+    stack.push(1);
+    stack.push(2);
+
+    expect(stack.isEmpty()).toBeFalsy();
+  });
 });

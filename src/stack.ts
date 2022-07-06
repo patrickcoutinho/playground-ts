@@ -13,7 +13,9 @@ export default class Stack {
   }
 
   public pop() {
-    const item = this.items[this.count - 1] || undefined;
+    if (this.isEmpty()) return undefined;
+
+    const item = this.items[this.count - 1];
 
     delete this.items[this.count - 1];
     this.count--;

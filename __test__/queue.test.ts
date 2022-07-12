@@ -23,7 +23,7 @@ describe('Queue Playground Tests', () => {
 
     const item = queue.dequeue();
 
-    expect(item).toBe(4);
+    expect(item).toEqual(4);
     expect(queue.size()).toEqual(1);
   });
 
@@ -37,5 +37,15 @@ describe('Queue Playground Tests', () => {
     queue.queueUp(99);
 
     expect(queue.size()).toEqual(3);
+  });
+
+  test('should return if queue is empty', () => {
+    const queue = new Queue();
+
+    expect(queue.isEmpty()).toBeTruthy();
+
+    queue.queueUp(4);
+
+    expect(queue.isEmpty()).toBeFalsy();
   });
 });

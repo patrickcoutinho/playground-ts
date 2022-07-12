@@ -8,9 +8,7 @@ export default class Queue {
   private items: QueueItems;
 
   constructor() {
-    this.count = 0;
-    this.lowest = 0;
-    this.items = {};
+    this.clear();
   }
 
   public queueUp(item: any) {
@@ -34,5 +32,11 @@ export default class Queue {
 
   public size() {
     return this.count - this.lowest;
+  }
+
+  public clear() {
+    this.count = 0;
+    this.lowest = 0;
+    this.items = {};
   }
 }

@@ -18,7 +18,21 @@ export default class Queue {
     this.count++;
   }
 
+  public dequeue() {
+    if (this.isEmpty()) return undefined;
+
+    const firstItem = this.items[this.lowest];
+    delete this.items[this.lowest];
+    this.lowest++;
+
+    return firstItem;
+  }
+
+  public isEmpty() {
+    return this.count === 0;
+  }
+
   public size() {
-    return this.count;
+    return this.count - this.lowest;
   }
 }

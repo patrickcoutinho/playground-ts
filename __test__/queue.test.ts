@@ -48,4 +48,19 @@ describe('Queue Playground Tests', () => {
 
     expect(queue.isEmpty()).toBeFalsy();
   });
+
+  test('should clear the queue', () => {
+    const queue = new Queue();
+
+    queue.queueUp(4);
+    queue.queueUp(5);
+
+    expect(queue.isEmpty()).toBeFalsy();
+    expect(queue.size()).toBe(2);
+
+    queue.clear();
+
+    expect(queue.isEmpty()).toBeTruthy();
+    expect(queue.size()).toBe(0);
+  });
 });

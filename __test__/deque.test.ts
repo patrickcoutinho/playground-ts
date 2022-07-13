@@ -44,4 +44,17 @@ describe('Deque Tests Playground', () => {
 
     expect(deque.size()).toBe(1);
   });
+
+  test('should clear the Deque', () => {
+    const deque = new Deque();
+
+    deque.addFront(21);
+
+    expect(deque.size()).toBe(1);
+
+    deque.clear();
+
+    expect(deque.size()).toBe(0);
+    expect(deque.isEmpty()).toBeTruthy();
+  });
 });

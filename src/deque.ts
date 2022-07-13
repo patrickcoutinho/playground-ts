@@ -4,13 +4,17 @@ export default class Deque<T> {
   private items: any;
 
   constructor() {
-    this.count = 0;
-    this.lowest = 0;
-    this.items = {};
+    this.clear();
   }
 
   public size() {
     return this.count - this.lowest;
+  }
+
+  public clear() {
+    this.count = 0;
+    this.lowest = 0;
+    this.items = {};
   }
 
   public isEmpty() {

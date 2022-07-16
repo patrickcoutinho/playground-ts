@@ -69,4 +69,20 @@ export default class Deque<T> {
 
     return result;
   }
+
+  peekFront() {
+    if (this.isEmpty()) {
+      return undefined;
+    }
+
+    return this.items[this.lowest];
+  }
+
+  peekBack() {
+    if (this.isEmpty()) {
+      return undefined;
+    }
+
+    return this.items[this.count - 1];
+  }
 }

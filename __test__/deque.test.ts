@@ -60,6 +60,7 @@ describe('Deque Tests Playground', () => {
 
   test('should remove front item of the Deque', () => {
     const deque = new Deque();
+
     deque.addFront(1);
     deque.addBack(21);
     deque.addFront(2);
@@ -75,6 +76,7 @@ describe('Deque Tests Playground', () => {
 
   test('should remove back item of the Deque', () => {
     const deque = new Deque();
+
     deque.addFront(1);
     deque.addBack(21);
     deque.addFront(2);

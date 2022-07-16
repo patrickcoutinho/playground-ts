@@ -57,4 +57,16 @@ export default class Deque<T> {
 
     return result;
   }
+
+  removeBack() {
+    if (this.isEmpty()) {
+      return undefined;
+    }
+
+    this.count--;
+    const result = this.items[this.count];
+    delete this.items[this.count];
+
+    return result;
+  }
 }

@@ -89,4 +89,38 @@ describe('Deque Tests Playground', () => {
     expect(deque.size()).toBe(3);
     expect(backItem).toEqual(21);
   });
+
+  test('should peek front item of the Deque', () => {
+    const deque = new Deque();
+
+    deque.addFront(1);
+    deque.addBack(21);
+    deque.addFront(2);
+    deque.addFront(3);
+    deque.addBack(33);
+
+    expect(deque.size()).toBe(5);
+
+    const frontItem = deque.peekFront();
+
+    expect(frontItem).toEqual(3);
+    expect(deque.size()).toBe(5);
+  });
+
+  test('should peek back item of the Deque', () => {
+    const deque = new Deque();
+
+    deque.addFront(1);
+    deque.addBack(21);
+    deque.addFront(2);
+    deque.addFront(3);
+    deque.addBack(33);
+
+    expect(deque.size()).toBe(5);
+
+    const backItem = deque.peekBack();
+
+    expect(backItem).toEqual(33);
+    expect(deque.size()).toBe(5);
+  });
 });

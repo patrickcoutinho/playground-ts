@@ -72,4 +72,19 @@ describe('Deque Tests Playground', () => {
     expect(deque.size()).toBe(3);
     expect(frontItem).toEqual(3);
   });
+
+  test('should remove back item of the Deque', () => {
+    const deque = new Deque();
+    deque.addFront(1);
+    deque.addBack(21);
+    deque.addFront(2);
+    deque.addFront(3);
+
+    expect(deque.size()).toBe(4);
+
+    const backItem = deque.removeBack();
+
+    expect(deque.size()).toBe(3);
+    expect(backItem).toEqual(21);
+  });
 });

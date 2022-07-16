@@ -57,4 +57,19 @@ describe('Deque Tests Playground', () => {
     expect(deque.size()).toBe(0);
     expect(deque.isEmpty()).toBeTruthy();
   });
+
+  test('should remove front item of the Deque', () => {
+    const deque = new Deque();
+    deque.addFront(1);
+    deque.addBack(21);
+    deque.addFront(2);
+    deque.addFront(3);
+
+    expect(deque.size()).toBe(4);
+
+    const frontItem = deque.removeFront();
+
+    expect(deque.size()).toBe(3);
+    expect(frontItem).toEqual(3);
+  });
 });

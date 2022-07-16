@@ -45,4 +45,16 @@ export default class Deque<T> {
     this.items[this.count] = element;
     this.count++;
   }
+
+  removeFront() {
+    if (this.isEmpty()) {
+      return undefined;
+    }
+
+    const result = this.items[this.lowest];
+    delete this.items[this.lowest];
+    this.lowest++;
+
+    return result;
+  }
 }

@@ -33,4 +33,14 @@ export class LinkedList<T> {
     this.tail = newNode;
     this.count++;
   }
+
+  public prepend(value: T) {
+    const newNode = {
+      value,
+      next: this.head,
+    };
+
+    this.head = newNode;
+    this.count++;
+  }
 }

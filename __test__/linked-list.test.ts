@@ -61,4 +61,23 @@ describe('Linked List Tests Playground', () => {
     expect(linkedList.head.value).toBe(prependValueTwo);
     expect(linkedList.length()).toBe(3);
   });
+
+  test('should convert LinkedList to array', () => {
+    const startValue = faker.random.word();
+    const appendValue = faker.random.word();
+    const prependValue = faker.random.word();
+
+    const linkedList = new LinkedList(startValue);
+
+    linkedList.append(appendValue);
+    linkedList.prepend(prependValue);
+
+    expect(linkedList.toArray()).toEqual([
+      prependValue,
+      startValue,
+      appendValue,
+    ]);
+
+    expect(linkedList.toArray()).toHaveLength(3);
+  });
 });

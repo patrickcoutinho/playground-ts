@@ -17,11 +17,7 @@ export class LinkedList<T> {
   public tail: Node<T> | undefined = undefined;
 
   constructor(value: T) {
-    this.head = {
-      value,
-      next: null,
-    };
-
+    this.head = new Node<T>(value);
     this.tail = this.head;
     this.count++;
   }
@@ -41,7 +37,20 @@ export class LinkedList<T> {
   public prepend(value: T) {
     const newNode = new Node<T>(value);
 
+    newNode.next = this.head;
     this.head = newNode;
     this.count++;
+  }
+
+  public toArray() {
+    const array = [];
+    let current = this.head;
+
+    while (current !== null) {
+      array.push(current.value);
+      current = current.next;
+    }
+
+    return array;
   }
 }

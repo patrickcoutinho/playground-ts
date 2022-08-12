@@ -1,7 +1,14 @@
-type Node<T> = {
-  value: T;
-  next: Node<any>;
-};
+class Node<T> {
+  public next: Node<T>;
+  public value: T;
+
+  constructor(value: T) {
+    this.value = value;
+    this.next = null;
+
+    return this;
+  }
+}
 
 export class LinkedList<T> {
   private count: number = 0;
@@ -24,10 +31,7 @@ export class LinkedList<T> {
   }
 
   public append(value: T) {
-    const newNode = {
-      value,
-      next: null,
-    };
+    const newNode = new Node<T>(value);
 
     this.tail.next = newNode;
     this.tail = newNode;
@@ -35,10 +39,7 @@ export class LinkedList<T> {
   }
 
   public prepend(value: T) {
-    const newNode = {
-      value,
-      next: this.head,
-    };
+    const newNode = new Node<T>(value);
 
     this.head = newNode;
     this.count++;

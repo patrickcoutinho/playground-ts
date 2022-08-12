@@ -39,4 +39,26 @@ describe('Linked List Tests Playground', () => {
     expect(linkedList.tail.value).toBe(appendValueTwo);
     expect(linkedList.length()).toBe(3);
   });
+
+  test('should prepend values to LinkedList correctly', () => {
+    const headValue = faker.random.word();
+    const prependValueOne = faker.random.word();
+    const prependValueTwo = faker.random.word();
+
+    const linkedList = new LinkedList(headValue);
+
+    expect(linkedList.head.value).toBe(headValue);
+    expect(linkedList.head.next).toBe(null);
+    expect(linkedList.length()).toBe(1);
+
+    linkedList.prepend(prependValueOne);
+
+    expect(linkedList.head.value).toBe(prependValueOne);
+    expect(linkedList.length()).toBe(2);
+
+    linkedList.prepend(prependValueTwo);
+
+    expect(linkedList.head.value).toBe(prependValueTwo);
+    expect(linkedList.length()).toBe(3);
+  });
 });

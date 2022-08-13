@@ -47,6 +47,10 @@ export class LinkedList<T> {
       return this.prepend(value);
     }
 
+    if (index >= this.length()) {
+      return this.append(value);
+    }
+
     const newNode = new Node<T>(value);
 
     let previousNode = this.head;

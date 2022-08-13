@@ -63,7 +63,7 @@ describe('Linked List Tests Playground', () => {
   });
 
   test('should insert a value to LinkedList in the correct index', () => {
-    const insetValue = faker.random.word();
+    const insertValue = faker.random.word();
 
     const linkedList = new LinkedList(faker.random.word());
 
@@ -75,14 +75,14 @@ describe('Linked List Tests Playground', () => {
 
     expect(linkedList.length()).toBe(6);
 
-    linkedList.insert(3, insetValue);
+    linkedList.insert(3, insertValue);
 
     expect(linkedList.length()).toBe(7);
-    expect(linkedList.toArray()[3]).toBe(insetValue);
+    expect(linkedList.toArray()[3]).toBe(insertValue);
   });
 
   test('should insert a value to LinkedList in the index 0', () => {
-    const insetValue = faker.random.word();
+    const insertValue = faker.random.word();
 
     const linkedList = new LinkedList(faker.random.word());
 
@@ -94,10 +94,31 @@ describe('Linked List Tests Playground', () => {
 
     expect(linkedList.length()).toBe(6);
 
-    linkedList.insert(0, insetValue);
+    linkedList.insert(0, insertValue);
 
     expect(linkedList.length()).toBe(7);
-    expect(linkedList.toArray()[0]).toBe(insetValue);
+    expect(linkedList.toArray()[0]).toBe(insertValue);
+  });
+
+  test('should insert a value to index >= the LinkedList length', () => {
+    const insertValue = faker.random.word();
+
+    const linkedList = new LinkedList(faker.random.word());
+
+    linkedList.append(faker.random.word());
+    linkedList.append(faker.random.word());
+    linkedList.append(faker.random.word());
+    linkedList.append(faker.random.word());
+    linkedList.append(faker.random.word());
+
+    expect(linkedList.length()).toBe(6);
+
+    linkedList.insert(99, insertValue);
+
+    const array = linkedList.toArray();
+
+    expect(linkedList.length()).toBe(7);
+    expect(array[array.length - 1]).toBe(insertValue);
   });
 
   test('should convert LinkedList to array', () => {

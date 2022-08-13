@@ -93,6 +93,31 @@ export class LinkedList<T> {
     previousNode.next = atIndexNode.next;
   }
 
+  public lookup(index: number) {
+    if (index === 0) {
+      return this.head.value;
+    }
+
+    if (index === this.length()) {
+      return this.tail.value;
+    }
+
+    if (index > this.length()) {
+      return undefined;
+    }
+
+    let atIndexNode = this.head;
+
+    let counter = 0;
+    while (counter < index) {
+      atIndexNode = atIndexNode.next;
+
+      counter++;
+    }
+
+    return atIndexNode.value;
+  }
+
   public toArray() {
     const array = [];
     let current = this.head;

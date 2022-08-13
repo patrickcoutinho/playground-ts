@@ -42,6 +42,23 @@ export class LinkedList<T> {
     this.count++;
   }
 
+  public insert(index: number, value: T) {
+    const newNode = new Node<T>(value);
+
+    let previousNode = this.head;
+
+    for (let i = 0; i < index - 1; i++) {
+      previousNode = previousNode.next;
+    }
+
+    const atIndexNode = previousNode.next;
+
+    previousNode.next = newNode;
+    newNode.next = atIndexNode;
+
+    this.count++;
+  }
+
   public toArray() {
     const array = [];
     let current = this.head;

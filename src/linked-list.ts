@@ -43,6 +43,10 @@ export class LinkedList<T> {
   }
 
   public insert(index: number, value: T) {
+    if (index === 0) {
+      return this.prepend(value);
+    }
+
     const newNode = new Node<T>(value);
 
     let previousNode = this.head;

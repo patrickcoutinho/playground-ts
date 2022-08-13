@@ -67,6 +67,23 @@ export class LinkedList<T> {
     this.count++;
   }
 
+  public remove(index: number) {
+    let previousNode = this.head;
+    let atIndexNode = this.head.next;
+
+    let counter = 0;
+
+    while (counter !== index - 1) {
+      previousNode = atIndexNode;
+      atIndexNode = atIndexNode.next;
+      counter++;
+    }
+
+    previousNode.next = atIndexNode.next;
+
+    this.count--;
+  }
+
   public toArray() {
     const array = [];
     let current = this.head;

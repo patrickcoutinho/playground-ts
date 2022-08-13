@@ -68,6 +68,13 @@ export class LinkedList<T> {
   }
 
   public remove(index: number) {
+    this.count--;
+
+    if (index === 0) {
+      this.head = this.head.next;
+      return;
+    }
+
     let previousNode = this.head;
     let atIndexNode = this.head.next;
 
@@ -80,8 +87,6 @@ export class LinkedList<T> {
     }
 
     previousNode.next = atIndexNode.next;
-
-    this.count--;
   }
 
   public toArray() {

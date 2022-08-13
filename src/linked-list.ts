@@ -22,84 +22,13 @@ export class LinkedList<T> {
     this.count++;
   }
 
-  public length() {
-    return this.count;
-  }
-
-  public append(value: T) {
-    const newNode = new Node<T>(value);
-
-    this.tail.next = newNode;
-    this.tail = newNode;
-    this.count++;
-  }
-
-  public prepend(value: T) {
-    const newNode = new Node<T>(value);
-
-    newNode.next = this.head;
-    this.head = newNode;
-    this.count++;
-  }
-
-  public insert(index: number, value: T) {
+  private lookupNode(index: number): Node<T> | undefined {
     if (index === 0) {
-      return this.prepend(value);
-    }
-
-    if (index >= this.length()) {
-      return this.append(value);
-    }
-
-    const newNode = new Node<T>(value);
-
-    let previousNode = this.head;
-
-    for (let i = 0; i < index - 1; i++) {
-      previousNode = previousNode.next;
-    }
-
-    const atIndexNode = previousNode.next;
-
-    previousNode.next = newNode;
-    newNode.next = atIndexNode;
-
-    this.count++;
-  }
-
-  public remove(index: number) {
-    if (index > this.length()) {
-      return;
-    }
-
-    this.count--;
-
-    if (index === 0) {
-      this.head = this.head.next;
-      return;
-    }
-
-    let previousNode = this.head;
-    let atIndexNode = this.head.next;
-
-    let counter = 0;
-
-    while (counter !== index - 1) {
-      previousNode = atIndexNode;
-      atIndexNode = atIndexNode.next;
-      counter++;
-    }
-
-    previousNode.next = atIndexNode.next;
-  }
-
-  public lookup(index: number) {
-    if (index === 0) {
-      return this.head.value;
+      return this.head;
     }
 
     if (index === this.length()) {
-      return this.tail.value;
+      return this.tail;
     }
 
     if (index > this.length()) {
@@ -115,7 +44,70 @@ export class LinkedList<T> {
       counter++;
     }
 
-    return atIndexNode.value;
+    return atIndexNode;
+  }
+
+  public length(): number {
+    return this.count;
+  }
+
+  public append(value: T): void {
+    const newNode = new Node<T>(value);
+
+    this.tail.next = newNode;
+    this.tail = newNode;
+    this.count++;
+  }
+
+  public prepend(value: T): void {
+    const newNode = new Node<T>(value);
+
+    newNode.next = this.head;
+    this.head = newNode;
+    this.count++;
+  }
+
+  public insert(index: number, value: T): void {
+    if (index === 0) {
+      return this.prepend(value);
+    }
+
+    if (index >= this.length()) {
+      return this.append(value);
+    }
+
+    const newNode = new Node<T>(value);
+
+    const previousNode = this.lookupNode(index - 1);
+    const atIndexNode = previousNode.next;
+
+    previousNode.next = newNode;
+    newNode.next = atIndexNode;
+
+    this.count++;
+  }
+
+  public remove(index: number): void {
+    if (index > this.length()) {
+      return;
+    }
+
+    this.count--;
+
+    if (index === 0) {
+      this.head = this.head.next;
+      return;
+    }
+
+    const previousNode = this.lookupNode(index - 1);
+    const atIndexNode = previousNode.next;
+
+    previousNode.next = atIndexNode.next;
+  }
+
+  public lookup(index: number): T {
+    const node = this.lookupNode(index);
+    return node?.value || undefined;
   }
 
   public toArray() {

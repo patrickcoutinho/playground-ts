@@ -62,6 +62,25 @@ describe('Linked List Tests Playground', () => {
     expect(linkedList.length()).toBe(3);
   });
 
+  test('should insert a value to LinkedList in the correct index', () => {
+    const insetValue = faker.random.word();
+
+    const linkedList = new LinkedList(faker.random.word());
+
+    linkedList.append(faker.random.word());
+    linkedList.append(faker.random.word());
+    linkedList.append(faker.random.word());
+    linkedList.append(faker.random.word());
+    linkedList.append(faker.random.word());
+
+    expect(linkedList.length()).toBe(6);
+
+    linkedList.insert(3, insetValue);
+
+    expect(linkedList.length()).toBe(7);
+    expect(linkedList.toArray()[3]).toBe(insetValue);
+  });
+
   test('should convert LinkedList to array', () => {
     const startValue = faker.random.word();
     const appendValue = faker.random.word();

@@ -68,6 +68,10 @@ export class LinkedList<T> {
   }
 
   public remove(index: number) {
+    if (index > this.length()) {
+      return;
+    }
+
     this.count--;
 
     if (index === 0) {

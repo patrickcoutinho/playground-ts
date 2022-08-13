@@ -180,6 +180,25 @@ describe('Linked List Tests Playground', () => {
     expect(linkedList.length()).toBe(6);
   });
 
+  test('should lookup value from index', () => {
+    const lookupValue1 = faker.random.word();
+    const lookupValue2 = faker.random.word();
+    const lookupValue3 = faker.random.word();
+
+    const linkedList = new LinkedList(lookupValue1);
+
+    linkedList.append(faker.random.word());
+    linkedList.append(lookupValue2);
+    linkedList.append(faker.random.word());
+    linkedList.append(faker.random.word());
+    linkedList.append(lookupValue3);
+
+    expect(linkedList.lookup(0)).toBe(lookupValue1);
+    expect(linkedList.lookup(2)).toBe(lookupValue2);
+    expect(linkedList.lookup(5)).toBe(lookupValue3);
+    expect(linkedList.lookup(99)).toBeUndefined();
+  });
+
   test('should convert LinkedList to array', () => {
     const startValue = faker.random.word();
     const appendValue = faker.random.word();

@@ -110,6 +110,21 @@ export class LinkedList<T> {
     return node?.value || undefined;
   }
 
+  public reverse(): LinkedList<T> {
+    let current = this.head;
+
+    const reverseList = new LinkedList(this.head.value);
+
+    current = current.next;
+
+    while (current !== null) {
+      reverseList.prepend(current.value);
+      current = current.next;
+    }
+
+    return reverseList;
+  }
+
   public toArray() {
     const array = [];
     let current = this.head;

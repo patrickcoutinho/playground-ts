@@ -217,4 +217,26 @@ describe('Linked List Tests Playground', () => {
 
     expect(linkedList.toArray()).toHaveLength(3);
   });
+
+  test('should returns a reversed LinkedList', () => {
+    const valueOne = faker.random.word();
+    const valueTwo = faker.random.word();
+    const valueThree = faker.random.word();
+    const valueFour = faker.random.word();
+
+    const linkedList = new LinkedList(valueOne);
+
+    linkedList.append(valueTwo);
+    linkedList.append(valueThree);
+    linkedList.append(valueFour);
+
+    const reverseList = linkedList.reverse();
+
+    expect(reverseList.toArray()).toEqual([
+      valueFour,
+      valueThree,
+      valueTwo,
+      valueOne,
+    ]);
+  });
 });

@@ -1,7 +1,11 @@
 export default class Deque<T> {
   private count: number;
+
   private lowest: number;
-  private items: any;
+
+  private items: {
+    [name: string]: T;
+  };
 
   constructor() {
     this.clear();

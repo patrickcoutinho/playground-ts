@@ -13,8 +13,8 @@ describe('Linked List Tests Playground', () => {
 
     const linkedList = new LinkedList(headValue);
 
-    expect(linkedList.head.value).toBe(headValue);
-    expect(linkedList.head.next).toBe(null);
+    expect(linkedList.head?.value).toBe(headValue);
+    expect(linkedList.head?.next).toBe(null);
     expect(linkedList.length()).toBe(1);
   });
 
@@ -25,18 +25,18 @@ describe('Linked List Tests Playground', () => {
 
     const linkedList = new LinkedList(headValue);
 
-    expect(linkedList.head.value).toBe(headValue);
-    expect(linkedList.head.next).toBe(null);
+    expect(linkedList.head?.value).toBe(headValue);
+    expect(linkedList.head?.next).toBe(null);
     expect(linkedList.length()).toBe(1);
 
     linkedList.append(appendValueOne);
 
-    expect(linkedList.tail.value).toBe(appendValueOne);
+    expect(linkedList.tail?.value).toBe(appendValueOne);
     expect(linkedList.length()).toBe(2);
 
     linkedList.append(appendValueTwo);
 
-    expect(linkedList.tail.value).toBe(appendValueTwo);
+    expect(linkedList.tail?.value).toBe(appendValueTwo);
     expect(linkedList.length()).toBe(3);
   });
 
@@ -47,18 +47,18 @@ describe('Linked List Tests Playground', () => {
 
     const linkedList = new LinkedList(headValue);
 
-    expect(linkedList.head.value).toBe(headValue);
-    expect(linkedList.head.next).toBe(null);
+    expect(linkedList.head?.value).toBe(headValue);
+    expect(linkedList.head?.next).toBe(null);
     expect(linkedList.length()).toBe(1);
 
     linkedList.prepend(prependValueOne);
 
-    expect(linkedList.head.value).toBe(prependValueOne);
+    expect(linkedList.head?.value).toBe(prependValueOne);
     expect(linkedList.length()).toBe(2);
 
     linkedList.prepend(prependValueTwo);
 
-    expect(linkedList.head.value).toBe(prependValueTwo);
+    expect(linkedList.head?.value).toBe(prependValueTwo);
     expect(linkedList.length()).toBe(3);
   });
 
@@ -158,7 +158,7 @@ describe('Linked List Tests Playground', () => {
     linkedList.remove(0);
 
     expect(linkedList.length()).toBe(5);
-    expect(linkedList.head.value).toBe(index1Value);
+    expect(linkedList.head?.value).toBe(index1Value);
   });
 
   test('should do nothing when trying to remove a non-existent index', () => {

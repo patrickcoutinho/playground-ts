@@ -4,7 +4,9 @@ type QueueItems = {
 
 export default class Queue {
   private count: number;
+
   private lowest: number;
+
   private items: QueueItems;
 
   constructor() {

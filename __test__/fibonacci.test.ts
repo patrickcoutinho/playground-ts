@@ -6,7 +6,7 @@ const fibonacci: number[] = [
 ];
 
 const fibonacciSlices = [];
-for (let num in fibonacci) {
+for (const num in fibonacci) {
   fibonacciSlices[num] = fibonacci.slice(0, num as unknown as number);
 }
 
@@ -21,6 +21,6 @@ describe('Fibonacci Sequence Playground Tests', () => {
     'should create $items elements of Fibonacci sequence',
     ({ items, expected }) => {
       expect(createFibonacci(items)).toEqual(expected);
-    }
+    },
   );
 });

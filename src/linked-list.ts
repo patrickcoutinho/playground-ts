@@ -1,5 +1,6 @@
 class Node<T> {
   public next: Node<T>;
+
   public value: T;
 
   constructor(value: T) {
@@ -11,9 +12,10 @@ class Node<T> {
 }
 
 export class LinkedList<T> {
-  private count: number = 0;
+  private count = 0;
 
   public head: Node<T> | undefined = undefined;
+
   public tail: Node<T> | undefined = undefined;
 
   constructor(value: T) {

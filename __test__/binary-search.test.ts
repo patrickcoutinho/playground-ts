@@ -19,9 +19,9 @@ describe('Binary Search Playground Tests', () => {
           target: number,
           lower: 0,
           higher: collection.length,
-        })
+        }),
       ).toEqual(expected);
-    }
+    },
   );
 
   test('should returns -1 if the element is not found', () => {
@@ -31,7 +31,7 @@ describe('Binary Search Playground Tests', () => {
         target: 99,
         lower: 0,
         higher: collection.length,
-      })
+      }),
     ).toEqual(-1);
   });
 
@@ -42,7 +42,7 @@ describe('Binary Search Playground Tests', () => {
         target: 99,
         lower: 0,
         higher: 0,
-      })
+      }),
     ).toEqual(-1);
   });
 });

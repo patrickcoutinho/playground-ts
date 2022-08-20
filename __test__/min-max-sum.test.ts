@@ -11,6 +11,6 @@ describe('MinMaxSum Tests Playground', () => {
     'should returns $expected to supplied array',
     ({ input, expected }) => {
       expect(minMaxSum(input)).toEqual(expected);
-    }
+    },
   );
 });

@@ -3,7 +3,7 @@ module.exports = {
   parserOptions: {
     project: './tsconfig.json',
   },
-  ignorePatterns: ['.eslintrc.js'],
+  ignorePatterns: ['*.js'],
   extends: [
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',

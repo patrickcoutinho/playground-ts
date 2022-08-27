@@ -1,4 +1,4 @@
-import Deque from '../src/deque';
+import Deque from '../src/data-structures/deque';
 
 describe('Deque Tests Playground', () => {
   test('should create a new instance of Deque', () => {

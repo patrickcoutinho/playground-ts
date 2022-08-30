@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { HashTable } from '../src/hash-table';
+import { HashTable } from '../src/data-structures/hash-table';
 
 describe('HashTable Playground', () => {
   test('should create a HashTable', () => {

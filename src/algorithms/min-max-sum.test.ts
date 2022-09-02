@@ -1,4 +1,4 @@
-import { minMaxSum } from '../src/min-max-sum';
+import { minMaxSum } from './min-max-sum';
 
 const testCase = [
   { input: [1, 2, 3, 4, 5], expected: { min: 10, max: 14 } },

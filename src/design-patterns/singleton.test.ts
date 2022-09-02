@@ -1,4 +1,4 @@
-import { Singleton } from '../../src/design-patterns/singleton';
+import { Singleton } from './singleton';
 
 describe('Singleton Playground', () => {
   test('should be the same instance', () => {

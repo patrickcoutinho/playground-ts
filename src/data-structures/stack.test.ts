@@ -1,4 +1,4 @@
-import Stack from '../src/data-structures/stack';
+import Stack from './stack';
 
 describe('Stack Tests Playground', () => {
   test('should add an element to stack', () => {

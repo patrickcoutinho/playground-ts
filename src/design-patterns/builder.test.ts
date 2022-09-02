@@ -1,4 +1,4 @@
-import { ConcreteBuilder1, Director } from '../../src/design-patterns/builder';
+import { ConcreteBuilder1, Director } from './builder';
 
 describe('Builder Playground', () => {
   test('should build a Minimal Viable Product', () => {

@@ -4,7 +4,7 @@ import {
   ConcreteCreator2,
   ConcreteProduct1,
   ConcreteProduct2,
-} from '../../src/design-patterns/factory';
+} from './factory';
 
 describe('Factory Playground', () => {
   test('should call operation from ConcreteProduct1', () => {

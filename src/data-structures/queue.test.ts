@@ -1,4 +1,4 @@
-import Queue from '../src/data-structures/queue';
+import Queue from './queue';
 
 describe('Queue Playground Tests', () => {
   test('should queue up an item', () => {

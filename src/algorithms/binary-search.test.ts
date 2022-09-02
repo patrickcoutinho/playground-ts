@@ -1,5 +1,5 @@
-import { binarySearch } from '../src/binary-search';
-import { createFibonacci } from '../src/fibonacci';
+import { binarySearch } from './binary-search';
+import { createFibonacci } from './fibonacci';
 
 const collection = [...new Set(createFibonacci(30))];
 

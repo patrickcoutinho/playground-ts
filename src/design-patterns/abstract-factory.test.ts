@@ -2,7 +2,7 @@ import {
   clientCode,
   HouseOneFactory,
   HouseTwoFactory,
-} from '../../src/design-patterns/abstract-factory';
+} from './abstract-factory';
 
 describe('Abstract Factory', () => {
   test('HouseOneFactory', () => {

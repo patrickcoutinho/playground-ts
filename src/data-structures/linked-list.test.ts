@@ -1,4 +1,4 @@
-import { LinkedList } from '../src/data-structures/linked-list';
+import { LinkedList } from './linked-list';
 import { faker } from '@faker-js/faker';
 
 describe('Linked List Tests Playground', () => {

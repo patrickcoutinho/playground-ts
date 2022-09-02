@@ -1,3 +1,8 @@
+/**
+ * ver para criar caso real
+ * https://codeburst.io/design-patterns-learning-abstract-factory-method-through-real-life-examples-9d0cc99ef0e8
+ * https://darrenfinch.com/abstract-factory-pattern-explained-creational-design-patterns/
+ */
 export interface AbstractAnimalFactory {
   createDog(): AbstractDog;
   createCat(): AbstractCat;
@@ -24,7 +29,7 @@ export class HouseTwoFactory implements AbstractAnimalFactory {
 }
 
 export abstract class AbstractDog {
-  public paws: number = 4;
+  public paws = 4;
 
   abstract sound(): string;
 }
@@ -42,7 +47,7 @@ export class Poodle extends AbstractDog {
 }
 
 export abstract class AbstractCat {
-  public paws: number = 4;
+  public paws = 4;
 
   public soundTogether(collaborator: AbstractDog): string {
     const result = collaborator.sound();
